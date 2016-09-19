@@ -1,0 +1,13 @@
+LandisData  "Output Biomass"
+
+Timestep  10
+
+Species    abiemagn	
+	   querkelo	
+
+MapNames  biomass/{species}-{timestep}.gis
+
+
+>> DeadPools both
+
+>> MapNames  biomass/{pool}-{timestep}.gis

@@ -1,0 +1,283 @@
+LandisData  "Biomass Harvest"
+
+Timestep    5
+
+ManagementAreas ../../mgmt_fishin.gis
+
+Stands      ../../stand_fishin.gis
+
+>>----------------------------------------------------------------------
+>> PRESCRIPTIONS
+>>---------------------------------------------------------------------- 
+Prescription    RxFire  <<based on 4-ft Flamelength
+>>--------------------------------- 
+    
+    StandRanking    Random  << No species preference
+    MinimumAge	    50	<< Age (years) is the average age of the oldest cohorts (per site) in a stand
+    MinimumTimeSinceLastHarvest		10  << (years) Includes any management activity
+    
+    ForestTypeTable 
+    >> For each inclusion rule, >70% of the sites in a stand MUST contain at least one cohort 
+    >> of the given age range & spp. for a rule to be true.
+    >> To qualify, at least one of these rules MUST be true
+    
+    >> InclusionRule	ageRange	percentCells	species 
+    Optional 		40-200		70 		pinucont pinupond pinujeff pinumont abieconc abiemagn pseumenz 
+    Optional 		40-200		70 		querkelo querchry querdoug querwisl
+    
+    SiteSelection   CompleteStandSpread 50  << Will try to spread to hit this target size in hectares
+    CohortsRemoved  SpeciesList
+       
+	>> Species  CohortsAges (Biomass reduction %)        
+        pseumenz    1-10 (85%) 11-20 (65%) 21-30 (59%) 31-40 (47%) 41-50 (38%) 51-60 (30%) 61-80 (24%) 81-100 (15%) 101-130 (7%) 131-150 (2%)
+	pinupond    1-10 (85%) 11-20 (65%) 21-30 (59%) 31-40 (47%) 41-50 (38%) 51-60 (30%) 61-80 (24%) 81-100 (15%) 101-130 (7%) 131-150 (2%)
+        pinulamb    1-10 (85%) 11-20 (65%) 21-30 (59%) 31-40 (47%) 41-50 (38%) 51-60 (30%) 61-80 (24%) 81-100 (15%) 101-130 (7%) 131-150 (2%)
+        pinujeff    1-10 (85%) 11-20 (65%) 21-30 (59%) 31-40 (47%) 41-50 (38%) 51-60 (30%) 61-80 (24%) 81-100 (15%) 101-130 (7%) 131-150 (2%)
+        abieconc    1-10 (85%) 11-20 (65%) 21-30 (59%) 31-40 (47%) 41-50 (38%) 51-60 (30%) 71-80 (24%) 81-100 (15%) 101-130 (7%) 131-150 (2%)
+        abiemagn    1-10 (85%) 11-20 (65%) 21-30 (59%) 31-50 (47%) 51-60 (38%) 61-70 (30%) 71-80 (24%) 81-100 (15%) 101-130 (7%) 131-150 (2%)
+        pinucont    1-10 (85%) 11-20 (65%) 21-30 (59%) 31-40 (47%) 41-50 (38%) 51-60 (30%) 61-80 (24%) 81-100 (15%) 101-130 (9%) 131-150 (3%)
+        calodecu    1-10 (85%) 11-20 (65%) 21-30 (59%) 31-40 (47%) 41-50 (38%) 51-60 (30%) 61-80 (24%) 81-100 (15%) 101-130 (7%) 131-150 (2%)
+        tsugmert    1-10 (85%) 11-20 (65%) 21-30 (59%) 31-40 (47%) 41-50 (38%) 51-60 (30%) 61-80 (24%) 81-100 (15%) 101-130 (7%) 131-150 (2%)
+        pinumont    1-10 (85%) 11-30 (65%) 31-40 (59%) 41-50 (47%) 51-60 (38%) 61-80 (30%) 81-100 (24%) 101-120 (15%) 121-140 (7%) 141-160 (1%)
+        pinualbi    1-10 (85%) 11-30 (65%) 31-40 (59%) 41-50 (47%) 51-60 (38%) 61-80 (30%) 81-100 (24%) 101-120 (15%) 121-140 (7%) 141-160 (1%) 
+        pinuflex    1-10 (85%) 11-30 (65%) 31-40 (59%) 41-50 (47%) 51-60 (38%) 61-80 (30%) 81-100 (24%) 101-120 (15%) 121-140 (7%) 141-160 (1%)
+        sequgiga    1-10 (85%) 11-30 (65%) 31-40 (59%) 41-50 (47%) 51-60 (38%) 61-80 (30%) 	       81-100 (13%) 101-130 (7%) 131-150 (2%)      
+        juniocci    1-10 (75%) 11-20 (60%) 21-30 (59%) 31-40 (45%) 41-50 (33%) 51-60 (19%) 61-80 (10%) 81-100 (4%)   
+        querkelo    1-10 (75%) 11-20 (60%) 21-30 (45%) 31-40 (35%) 41-50 (26%) 51-60 (18%) 61-80 (10%) 81-100 (4%)
+        querchry    1-10 (75%) 11-20 (60%) 21-30 (45%) 31-40 (35%) 41-50 (26%) 51-60 (18%) 61-80 (10%) 81-100 (4%)
+        querdoug    1-10 (75%) 11-20 (60%) 21-30 (45%) 31-40 (35%) 41-50 (26%) 51-60 (18%) 61-80 (10%) 81-100 (4%)
+        querwisl    1-10 (75%) 11-20 (60%) 21-30 (45%) 31-40 (35%) 41-50 (26%) 51-60 (18%) 61-80 (10%) 81-100 (4%)
+        poputrem    1-10 (75%) 11-20 (60%) 21-30 (45%) 31-40 (35%) 41-50 (26%) 51-60 (18%) 61-80 (10%) 81-100 (4%)
+        riparian    1-10 (45%) 11-20 (35%) 21-40 (22%) 41-60 (19%) 61-100 (8%) 101-200 (2%)
+        adenfasc    All
+        cercmont    All
+        anngrass    All
+
+
+>>--------------------------------- 
+Prescription    MxFire  << Mixed Lethal Fire based on 6-ft FlameLength
+>>--------------------------------- 
+    
+    StandRanking    Random  << No species preference
+    MinimumAge	    80	<< Age (years) is the average age of the oldest cohorts (per site) in a stand
+    MinimumTimeSinceLastHarvest		10  << (years) Includes any management activity
+    
+    ForestTypeTable 
+    >> For each inclusion rule, >70% of the sites in a stand MUST contain at least one cohort 
+    >> of the given age range & spp. for a rule to be true.
+    >> To qualify, at least one of these rules MUST be true
+    
+    >> InclusionRule	ageRange	percentCells	species 
+    Optional 		100-160 	70 		pinucont pinupond pinujeff pinumont abieconc abiemagn pseumenz 
+    Optional 		60-160		70 		querkelo querchry querdoug querwisl
+    
+    SiteSelection   CompleteStandSpread 50  << Will try to spread to hit this target size in hectares
+    CohortsRemoved  SpeciesList
+       
+	>> Species  CohortsAges (Biomass reduction %)
+
+        pseumenz    1-10 (90%) 11-20 (70%) 21-30 (65%) 31-40 (56%) 41-50 (49%) 51-60 (42%) 61-80 (37%) 81-100 (15%) 101-130 (9%) 131-150 (3%)
+        pinucont    1-10 (90%) 11-20 (70%) 21-30 (65%) 31-40 (56%) 41-50 (49%) 51-60 (42%) 61-80 (37%) 81-100 (15%) 101-130 (9%) 131-150 (3%) 
+	pinupond    1-10 (90%) 11-20 (70%) 21-30 (65%) 31-40 (56%) 41-50 (49%) 51-60 (42%) 61-80 (37%) 81-100 (15%) 101-130 (9%) 131-150 (3%) 
+        pinulamb    1-10 (90%) 11-20 (70%) 21-30 (65%) 31-40 (56%) 41-50 (49%) 51-60 (42%) 61-80 (37%) 81-100 (15%) 101-130 (9%) 131-150 (3%)
+        pinujeff    1-10 (90%) 11-20 (70%) 21-30 (65%) 31-40 (56%) 41-50 (49%) 51-60 (42%) 61-80 (37%) 81-100 (15%) 101-130 (9%) 131-150 (3%)
+        abieconc    1-10 (90%) 11-20 (70%) 21-30 (65%) 31-40 (56%) 41-50 (49%) 51-60 (42%) 61-80 (35%) 81-100 (15%) 101-130 (9%) 131-150 (3%)
+        abiemagn    1-10 (90%) 11-30 (70%) 31-40 (65%)             41-50 (49%) 51-60 (42%) 61-80 (35%) 81-100 (15%) 101-130 (9%) 131-150 (3%)
+        calodecu    1-10 (90%) 11-20 (70%) 21-30 (65%) 31-40 (56%) 41-50 (49%) 51-60 (42%) 61-80 (35%) 81-100 (15%) 101-130 (9%) 131-150 (3%)
+        pinumont    1-10 (90%) 11-20 (70%) 21-30 (65%) 31-40 (56%) 41-50 (49%) 51-60 (42%) 61-80 (35%) 81-100 (15%) 101-130 (9%) 131-150 (3%)
+	tsugmert    1-10 (90%) 11-20 (70%) 21-30 (65%) 31-40 (56%) 41-50 (49%) 51-60 (42%) 61-80 (35%) 81-100 (15%) 101-130 (9%) 131-150 (2%)
+        pinualbi    1-10 (90%) 11-20 (70%) 21-30 (65%) 31-40 (56%) 41-50 (49%) 51-60 (42%) 61-80 (35%) 81-100 (15%) 101-130 (9%) 131-150 (1%) 
+        pinuflex    1-10 (90%) 11-20 (70%) 21-30 (65%) 31-40 (56%) 41-50 (49%) 51-60 (42%) 61-80 (35%) 81-100 (15%) 101-130 (9%) 131-150 (1%)
+        sequgiga    1-10 (90%) 11-30 (70%) 31-40 (65%) 41-50 (56%) 51-60 (49%) 61-70 (42%) 71-90 (35%) 91-110 (15%) 111-130 (9%) 131-150 (3%)
+        juniocci    1-10 (90%) 11-20 (70%) 21-30 (50%) 31-40 (25%) 41-50 (13%) 51-60 (9%) 61-80 (6%) 81-100 (2%)   
+        querkelo    1-10 (90%) 11-20 (70%) 21-30 (55%) 31-40 (46%) 41-50 (36%) 51-60 (28%) 61-80 (15%) 81-100 (5%) 
+        querchry    1-10 (90%) 11-20 (70%) 21-30 (55%) 31-40 (45%) 41-50 (36%) 51-60 (28%) 61-80 (15%) 81-100 (5%)
+        querdoug    1-10 (90%) 11-20 (70%) 21-30 (55%) 31-40 (45%) 41-50 (36%) 51-60 (28%) 61-80 (15%) 81-100 (5%)
+        querwisl    1-10 (90%) 11-20 (70%) 21-30 (55%) 31-40 (45%) 41-50 (36%) 51-60 (28%) 61-80 (15%) 81-100 (5%)
+        poputrem    1-10 (90%) 11-20 (70%) 21-30 (55%) 31-40 (45%) 41-50 (36%) 51-60 (28%) 61-80 (15%) 81-100 (5%)
+        riparian    1-10 (65%) 11-20 (40%) 21-40 (32%) 41-60 (25%) 61-100 (11%) 101-150 (3%)
+        adenfasc    All
+        cercmont    All
+        anngrass    All
+
+>>---------------------------------     
+Prescription    ThinBurn1  <<12-inch limit thin with surface fuel treatment - e.g. thin and then burn  w/2-ft flame
+>>---------------------------------     
+   
+    StandRanking    Economic << although labeled 'Economic' this is a fuzzy set algorithm that favors the species listed. 
+    	>> Spp		Rank	MinAge
+    	pinucont	25	100
+    	pinupond	50	120
+    	pinujeff	25	120
+    	pinumont	25	120
+    	abieconc	100	100
+    	pseumenz	50	120
+    	calodecu	40	120
+    	juniocci	5	140
+    
+    MinimumAge	    50
+    MinimumTimeSinceLastHarvest		20
+    
+    ForestTypeTable 
+    >> In this example, > 70% of the sites in a stand MUST contain at least one cohort of the given age range & spp.
+    >> InclusionRule	ageRange	percentCells	species 
+    Required 		20-170 		70 		pinucont pinupond pinujeff pinumont abieconc abiemagn pseumenz
+    
+    SiteSelection   CompleteStandSpread 20
+    CohortsRemoved  SpeciesList         
+	>> Species  CohortsAges (Biomass reduction %) 
+       
+        pseumenz    1-10 (80%) 11-20 (61%) 21-30 (47%) 31-40 (36%) 41-50 (29%) 51-60 (21%) 61-70 (17%) 
+	pinupond    1-10 (80%) 11-20 (61%) 21-30 (47%) 31-40 (36%) 41-50 (29%) 51-60 (21%) 61-70 (17%)
+        pinulamb    1-10 (80%) 11-20 (61%) 21-30 (47%) 31-40 (36%)  <<6-inch retain rule
+        pinujeff    1-10 (80%) 11-20 (61%) 21-30 (47%) 31-40 (36%) 41-50 (29%) 51-60 (21%) 61-70 (17%)
+        abieconc    1-10 (80%) 11-20 (61%) 21-30 (47%) 31-40 (36%) 41-50 (29%) 51-60 (21%) 61-70 (17%)
+        abiemagn    1-10 (80%) 11-20 (61%) 21-30 (47%) 31-40 (36%) 41-50 (29%) 51-60 (21%) 61-80 (17%)
+	calodecu    1-10 (80%) 11-20 (61%) 21-30 (47%) 31-40 (36%) 41-50 (29%) 51-60 (21%) 61-80 (17%) 
+        pinumont    1-10 (80%) 11-20 (61%) 21-30 (47%) 31-40 (36%) 41-50 (29%) 61-80 (21%) 81-100 (17%)
+	tsugmert    1-10 (80%) 11-20 (61%) 21-30 (47%) 31-40 (36%) 41-50 (29%) 51-60 (21%) 61-70 (17%)
+        pinucont    1-10 (80%) 11-30 (61%) 31-40 (47%) 41-50 (36%) 51-60 (29%) 61-80 (21%) 81-100 (17%)
+        pinualbi    1-10 (80%) 11-20 (61%) 21-30 (47%) 31-40 (36%) 41-50 (29%) 61-80 (21%) 81-100 (17%) 
+        pinuflex    1-10 (80%) 11-20 (61%) 21-30 (47%) 31-40 (36%) 41-50 (29%) 61-80 (21%) 81-100 (17%) 
+        sequgiga    1-10 (80%) 11-30 (61%)                
+        juniocci    1-10 (80%) 11-20 (61%) 21-30 (47%) 31-40 (36%) 41-50 (29%) 51-60 (21%) 61-80 (17%)  
+        querkelo    1-10 (80%) 11-20 (25%)
+        querchry    1-10 (80%) 11-20 (25%)
+        querdoug    1-10 (80%) 11-20 (25%)
+        querwisl    1-10 (80%) 11-20 (25%)
+        poputrem    1-10 (80%) 11-20 (25%)
+        riparian    1-10 (45%) 11-20 (22%) 21-40 (11%) 41-60 (7%) 61-100 (2%)   <<due to follow-up fire
+        adenfasc    All
+        cercmont    All
+        anngrass    All
+
+        
+>>---------------------------------
+Prescription    ThinBurn2  <<40% Canopy-30inches - 2ft eqv flameLength follow-up
+    
+    StandRanking    Economic << although labeled 'Economic' this is a fuzzy set algorithm
+    	>> Spp		Rank	MinAge
+    	pinucont	25	100
+    	pinupond	50	120
+    	pinujeff	25	120
+    	pinumont	25	120
+    	abieconc	100	100
+    	pseumenz	50	120
+    	calodecu	40	120
+    	juniocci	5	140
+    	
+    MinimumAge	    50
+    MinimumTimeSinceLastHarvest		20
+    
+    ForestTypeTable 
+    >> InclusionRule	ageRange	percentCells	species 
+    Required 		50-200 		75 		pinucont pinupond pinujeff pinumont abieconc abiemagn pseumenz
+    
+    SiteSelection   CompleteStandSpread 20
+    CohortsRemoved  SpeciesList
+        >> Species  CohortsAges (Biomass reduction %)>> Species  CohortsAges (Biomass reduction %)
+        pseumenz    1-10 (85%) 11-20 (70%) 21-30 (59%) 31-40 (49%) 41-50 (41%) 51-60 (34%) 61-80 (23%) 81-100 (16%) 101-120 (7%)        
+	pinupond    1-10 (85%) 11-20 (70%) 21-30 (59%) 31-40 (49%) 41-50 (41%) 51-60 (34%) 61-80 (23%) 81-100 (16%) 101-120 (7%) 
+        pinulamb    1-10 (85%) 11-20 (70%) 21-30 (59%) 31-40 (49%) << 6-inch retain rule
+        pinujeff    1-10 (85%) 11-20 (70%) 21-30 (59%) 31-40 (49%) 41-50 (41%) 51-60 (34%) 61-80 (23%) 81-100 (16%) 101-120 (7%)
+	abieconc    1-10 (85%) 11-20 (70%) 21-30 (59%) 31-40 (49%) 41-50 (41%) 51-60 (34%) 61-80 (23%) 81-100 (16%) 101-120 (7%)
+	calodecu    1-10 (85%) 11-30 (70%) 31-40 (59%) 41-50 (49%) 51-60 (41%) 61-80 (34%) 81-100 (23%) 101-120 (15%) 121-130 (7%)
+	abiemagn    1-10 (85%) 11-20 (70%) 21-30 (59%) 31-40 (49%) 41-60 (41%) 61-90 (34%) 91-100 (23%) 101-120 (15%) 121-130 (7%)
+	tsugmert    1-10 (85%) 11-30 (70%) 31-50 (59%) 51-60 (49%) 61-80 (41%) 81-100 (34%) 101-130 (23%) 131-170 (12%)
+	pinucont    1-10 (85%) 11-30 (70%) 31-40 (59%) 41-50 (49%) 51-70 (41%) 71-80 (34%) 81-100 (23%) 101-200 (11%)
+        pinumont    1-10 (85%) 11-30 (70%) 31-50 (59%) 51-60 (49%) 61-80 (41%) 81-100 (34%) 101-130 (23%) 131-170 (11%)
+        pinualbi    1-10 (85%) 11-30 (70%) 31-50 (59%) 51-60 (49%) 61-80 (41%) 81-100 (34%) 101-130 (23%) 131-170 (11%)
+        pinuflex    1-10 (85%) 11-30 (70%) 31-50 (59%) 51-60 (49%) 61-80 (41%) 81-100 (34%) 101-130 (23%) 131-170 (11%)
+        sequgiga    1-10 (85%) 11-30 (70%) 31-50 (59%)  <<Rules limit harvest  
+        juniocci    1-10 (85%) 11-20 (70%) 21-30 (59%) 31-40 (49%) 41-50 (41%) 51-80 (34%) 81-100 (25%) 101-120 (7%)   
+        querkelo    1-10 (85%) 11-20 (70%) 21-30 (59%) 31-40 (49%)  <<Rules limit harvest
+        querchry    1-10 (85%) 11-20 (70%) 21-30 (59%) 31-40 (49%)  
+        querdoug    1-10 (85%) 11-20 (70%) 21-30 (59%) 31-40 (49%)
+        querwisl    1-10 (85%) 11-20 (70%) 21-30 (59%) 31-40 (49%)
+        poputrem    1-10 (85%) 11-20 (70%) 21-30 (59%) 31-40 (49%)
+        riparian    1-10 (45%) 11-20 (30%) 21-40 (20%) 41-60 (14%) 61-100 (8%) 101-200 (2%)
+        adenfasc    All
+        cercmont    All
+        anngrass    All
+
+
+
+>>---------------------------------
+Prescription    RxBrushGrass
+>>--------------------------------- 
+   
+    StandRanking    Random
+    MinimumTimeSinceLastHarvest		10
+    
+    ForestTypeTable 
+    >> InclusionRule	ageRange	percentCells	species 
+    Required 		5-100 		60 		adenfasc cercmont 
+    
+    SiteSelection   CompleteStandSpread 20
+    
+    CohortsRemoved  SpeciesList
+        >> Species  Cohorts
+        adenfasc    All
+        cercmont    All
+        anngrass    All  << Does it make any sense to remove grass?
+
+>>---------------------------------
+Prescription    PlantAfterFire
+>>---------------------------------  
+    
+    StandRanking    Random
+    
+    ForestTypeTable 
+    >> InclusionRule	ageRange	percentCells	species 
+    >> Note that the FORBIDDEN percentOfCells is reversed:  NO planting if the # cells with young cohorts > 35%
+    Forbidden 		1-80 		35 		pinucont pinupond pinujeff pinumont abieconc abiemagn pseumenz adenfasc cercmont calodecu juniocci querkelo querchry querwisl riparian
+    
+    SiteSelection   CompleteStandSpread 20
+    
+    CohortsRemoved  PlantOnly  << Nothing removed.
+    
+    Plant pinupond pseumenz pinujeff
+
+>>-------------------------------------------------------------------------------------------------
+>> NOTE:  These numbers will vary dependent upon the area area treated and the intensity of treatment.  
+>> These are only placeholders for the moment.
+
+>> PRESCRIPTION IMPLEMENTATION
+
+    HarvestImplementations
+>>  Mgmt Area   Prescription    Harvest Area    Begin Time  End Time
+>>  ---------   ------------    ------------    ----------  --------
+>>  0		No-thin/No-plant
+>>  17		Plant/no-thin	<< Stanislaus
+>>  107		Plant/no-thin	<< Sierra NF
+>>  1007	Plant/no-thin	<< Sequoia NF
+                
+    13		RxFire		8%	<< Stanislaus
+    15		RxFire		8%	<< Stanislaus
+    12		ThinBurn2	8%	<< Stanislaus
+    14		ThinBurn2	8%	<< Stanislaus
+    12		PlantAfterFire	5%	<< 
+    14		PlantAfterFire	5%	<< 
+
+    103		RxFire		8%	<< Sierra
+    105		RxFire		8%      << Sierra
+    102		ThinBurn2	8%	<< Sierra
+    104		ThinBurn2	8%	<< Sierra
+    102		PlantAfterFire	5%	
+    104		PlantAfterFire	5%	
+
+    1003	RxFire		8%	<< Sequoia
+    1005	RxFire		8%      << Sequoia
+    1002	ThinBurn2	8%	<< Sequoia
+    1004	ThinBurn2	8%	<< Sequoia
+    1002	PlantAfterFire	5%	
+    1004	PlantAfterFire	5%	
+
+    
+>>-------------------------------------------------------------------------------------------------
+>> OUTPUT MAPS
+>>---------------------------------  
+
+PrescriptionMaps    harvest/prescripts-{timestep}.gis
+BiomassMaps         harvest/biomass-removed-{timestep}.gis
+EventLog            harvest/log.csv

@@ -1,0 +1,315 @@
+LandisData  "Biomass Succession v2"
+
+Timestep  5
+
+SeedingAlgorithm  WardSeedDispersal
+
+MinRelativeBiomass
+
+>> Shade	Min Relative Biomass (% Maximum Biomass)
+>> Class	by Ecoregions
+>> ----------	--------------------	
+	        eco1   eco2   	eco3   	eco4	eco5	eco6	eco7
+
+	1	25%	25%	25%	25%	25%	25%	25%
+	2	35%	35%	35%	35%	35%	35%	35%
+	3	55%	55%	55%	55%	55%	55%	55%
+	4	80%	80%	80%	80%	80%	80%	80%
+	5	100%	100%	100%	100%	100%	100%	100%
+
+SufficientLightTable
+>> Spp Shade	Probability
+>> Class	by Actual Shade
+>> ----------	--------------------	
+>>		0	1	2	3	4	5
+	1	1.0	0.0	0.0	0.0	0.0	0.0
+	2	1.0	1.0	0.0	0.0	0.0	0.0
+	3	1.0	1.0	1.0	0.0	0.0	0.0
+	4	1.0	1.0	1.0	1.0	0.0	0.0
+	5	0.0	0.0	1.0	1.0	1.0	1.0
+
+BiomassParameters
+
+>> Species	Leaf		Bole		Mortality	Leaf
+>>		Longevity	DecayRate	ShapeParam	Lignin
+>> --------     ---------	---------	----------	------
+querdoug	1.00		0.10		10.00		0.1
+querkelo	1.00		0.10		10.00		0.1
+abiemagn	4.00		0.10		10.00		0.1
+querchry	1.00		0.10		10.00		0.1
+pseumenz	2.25		0.10		10.00		0.1
+sequgiga	4.00		0.10		10.00		0.1
+calodecu	4.00		0.10		10.00		0.1
+querwisl	1.00		0.10		10.00		0.1
+pinujeff	2.25		0.10		10.00		0.1
+pinuflex	2.25		0.10		10.00		0.1
+pinucont	2.25		0.10		10.00		0.1
+tsugmert	4.00		0.10		10.00		0.1
+pinupond	2.25		0.10		10.00		0.1
+poputrem	1.00		0.10		10.00		0.1
+pinulamb	2.25		0.10		10.00		0.1
+juniocci	4.00		0.10		10.00		0.1
+pinumont	2.25		0.10		10.00		0.1
+abieconc	4.00		0.10		10.00		0.1
+pinualbi	2.25		0.10		10.00		0.1
+adenfasc	1.00		0.10		10.00		0.1
+cercmont	1.00		0.10		10.00		0.1
+anngrass	1.00		0.10		10.00		0.1
+
+
+EcoregionParameters
+>>	AET
+>>	mm
+eco1	1000
+
+
+EstablishProbabilities
+
+>> Species        Ecoregions
+>>--------      -----------------------------------------------------
+		eco1	eco5	eco4	eco3	eco2	eco6	eco7
+abieconc	0.20	0.30	0.40	0.40	0.40	0.00	0.00
+abiemagn	0.50	0.40	0.35	0.35	0.35	0.00	0.00
+calodecu	0.05	0.25	0.05	0.25	0.25	0.00	0.00
+juniocci	0.12	0.30	0.13	0.02	0.02	0.00	0.00
+pinualbi	0.35	0.00	0.00	0.00	0.00	0.00	0.00
+pinucont	0.61	0.35	0.35	0.35	0.00	0.00	0.00
+pinuflex	0.02	0.00	0.00	0.00	0.00	0.00	0.00
+pinujeff	0.18	0.35	0.51	0.35	0.35	0.35	0.00
+pinulamb	0.15	0.15	0.02	0.15	0.15	0.00	0.00
+pinumont	0.45	0.20	0.07	0.20	0.20	0.00	0.00
+pinupond	0.20	0.50	0.50	0.50	0.50	0.00	0.00
+poputrem	0.00	0.00	0.00	0.00	0.00	0.00	0.00
+pseumenz	0.00	0.10	0.00	0.35	0.35	0.00	0.00
+querchry	0.00	0.05	0.05	0.25	0.40	0.50	0.00
+querdoug	0.00	0.00	0.00	0.25	0.40	0.70	0.00
+querkelo	0.00	0.05	0.05	0.25	0.40	0.00	0.00
+querwisl	0.00	0.00	0.05	0.25	0.40	0.65	0.00
+sequgiga	0.10	0.35	0.00	0.35	0.35	0.00	0.00
+tsugmert	0.75	0.01	0.00	0.00	0.00	0.00	0.00
+anngrass	0.00	0.00	0.00	0.00	0.00	0.00	0.00
+adenfasc	0.00	0.00	0.00	0.00	0.00	0.05	0.05
+cercmont	0.00	0.00	0.00	0.00	0.00	0.05	1.00
+        	
+   
+MaxANPP
+
+>> Species      Ecoregions
+>> --------     ------------------
+		eco1	eco5	eco4	eco3	eco2	eco6	eco7
+abieconc	3735	2991	2991	2000	2000	2000	0
+abiemagn	3832	3832	3832	2000	2000	0	0
+calodecu	1300	1300	1300	1300	1300	1300	0
+juniocci	1000	1000	1000	0	0	0	0
+pinualbi	3000	3000	3000	3000	0	0	0
+pinucont	3000	4000	4000	3000	0	0	0
+pinuflex	3000	4000	4000	3000	0	0	0
+pinujeff	1995	1995	1995	1995	1995	1995	0
+pinulamb	1669	1669	1669	1669	1669	1669	0
+pinumont	3000	4000	4000	1669	1669	0	0
+pinupond	1988	1988	1988	2290	2290	0	0
+poputrem	2000	2000	2000	2000	0	0	0
+pseumenz	3125	3125	3125	3566	3566	3125	0
+querchry	0	0	928	928	928	928	0
+querdoug	0	0	928	928	2500	2000	0
+querkelo	0	1000	1500	1500	3000	3000	0
+querwisl	0	0	928	928	928	928	0
+sequgiga	5874	5874	0	5874	5874	0	0
+tsugmert	3000	4000	4000	2121	1500	0	0
+anngrass	50	50	50	50	50	50	50
+adenfasc	250	250	250	250	250	250	250
+cercmont	250	250	250	250	250	250	250
+
+
+MaxBiomass
+>> Species      Ecoregions
+>> --------     ------------------
+		eco1	eco5	eco4	eco3	eco2	eco6	eco7
+abieconc	393392	150000	273625	150000	150000	150000	0
+abiemagn	273625	150000	273625	150000	150000	0	0
+calodecu	80000	80000	80000	80000	80000	80000	0
+juniocci	70000	100000	185075	0	0	0	0
+pinualbi	416198	416198	416198	300000	0	0	0
+pinucont	300000	416198	416198	300000	0	0	0
+pinuflex	300000	416198	416198	300000	0	0	0
+pinujeff	200313	200313	200313	150000	200313	200313	0
+pinulamb	196570	196570	196570	196570	196570	196570	0
+pinumont	416198	416198	416198	300000	300000	0	0
+pinupond	196570	196570	196570	196570	318610	0	0
+poputrem	65800	65800	65800	65800	0	0	0
+pseumenz	236854	236854	236854	300000	300000	236854	0
+querchry	0	0	85000	85000	100000	150000	0
+querdoug	0	0	123741	123741	371538	250000	0
+querkelo	0	200000	300000	300000	371538	371538	0
+querwisl	0	0	85000	85000	100000	150000	0
+sequgiga	600000	600000	0	600000	600000	0	0
+tsugmert	300000	416198	416198	151085	0	0	0
+anngrass	70	70	70	70	70	70	70
+adenfasc	1000	1000	1000	1000	1000	1000	1000
+cercmont	1000	1000	1000	1000	1000	1000	1000
+
+
+AgeOnlyDisturbances:BiomassParameters ../../biomass_age-only-disturbances.txt
+		 	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		 	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
